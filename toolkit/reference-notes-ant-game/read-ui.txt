@@ -1,0 +1,457 @@
+# Ant-game 2D interface spec for the bee restyle
+
+## 0. Conventions and confidence
+
+- **Units.** `sw` / `sh` are fractions of the game viewport width / height. The viewport in the shots is about 726x798 (aspect about 0.91, portrait-ish).
+- **Accuracy.** Positions were measured on enlarged crops. Colours were sampled from JPEGs, so treat RGB as +/-10 per channel.
+- **Font.** One heavy rounded sans everywhere, which looks like FredokaOne. The only exception is the press-E prompts, which use Roblox's default prompt font.
+- **Text rule.** Almost every label is white or a bright colour with a near-black outline (about (10,15,5) to (30,30,30)) and no background plate. Outline is about 2-3 px at 800 px tall on big text and about 1-1.5 px on tiny text.
+- **Not game art.** The top-left system buttons (logo, menu, chat, mic) are Roblox's own. The bottom hotbar looks like Roblox's built-in tool bar.
+- Anything marked **(guess)** is inferred; **(unreadable)** means too small to read.
+
+---
+
+## 1. Always-on HUD
+
+### 1.1 Top-centre row of three buttons
+
+The row is centred on x = 50% sw. Bottom edges line up at about 7.3% sh. The middle button is about 1.3x larger than the two side buttons.
+
+| Button | x range (sw) | y range (sh) | Size | Fill (lighter top band / main) | Icon (left, about 80% of button height) | Text |
+|---|---|---|---|---|---|---|
+| "Equip Best" | 31.7-42.2% | 4.1-7.3% | 10.5% sw x 3.2% sh | (246,87,202) / (233,59,206) magenta | tiny multicoloured square picture (unreadable) | white, about 1.4% sh |
+| "Ants Nest" | 43.2-56.8% | 3.0-7.4% | 13.5% sw x 4.4% sh | (246,203,86) / (244,174,57) amber | three-tier stepped pyramid: yellow-green top, orange-brown tiers, dark doorway dots | white, about 1.9% sh |
+| "Items Shop" | 57.8-68.3% | 4.1-7.3% | 10.5% sw x 3.2% sh | (88,181,231) / (40,137,229) blue | pink potion bottle with cork, tilted about 20 degrees | white, about 1.4% sh |
+
+- Gap between buttons is about 1% sw.
+- Shape: rectangle, corner radius about 4-5 px, dark outline about 2 px.
+- Fill is two flat bands (lighter upper 40-50%, deeper lower part), not a smooth gradient.
+- Text is title case with a dark outline of about 2 px.
+- A tiny purple pouch or hat-shaped icon (about 2.3% sw, no label) sits just left of the row at 27.9% sw, 5.9% sh. Its purpose is unknown **(guess: an active-boost marker)**.
+
+### 1.2 Small icons, top-right
+
+Four bare icons in a row: no background, no label, each about 2.6% sw. Centres are at y about 6.5% sh and x about 84.7%, 88.1%, 91.6%, 95.3% sw.
+
+1. White calendar page with a red top bar and an orange tick. It matches the Daily Rewards header icon.
+2. Yellow open envelope or house shape with an orange mark in the middle. Function unknown **(guess: mail / gifts)**.
+3. Pale blue-white gear with a dark hole. It matches the Settings header icon.
+4. Green banknote with a small yellow arrow above two light-blue shapes **(unreadable; guess: trade or invite)**.
+
+### 1.3 Event timer text
+
+- Position: centred at 50% sw, two lines at about 14.1% and 16.0% sh, no background.
+- Style: white (about (240,240,240)), thin dark outline about 1 px, each line about 1.5% sh.
+- Wording seen: "Next Event Starts" / "in : 4:28". Later frames show "BlackMarket Event" / "Ends in : 2:35".
+- Counts down once per second in m:ss.
+
+### 1.4 Left column: icon over label
+
+Four stacked items, centred on x about 4.2% sw, with no button plate.
+
+- Label baselines sit at about 30.6%, 37.5%, 44.5%, 51.4% sh (7% sh pitch).
+- Each icon is about 4.2% sw. Labels are white (248,249,248), about 1.5% sh, with an outline of about 2 px.
+
+| Label | Icon |
+|---|---|
+| "Index" | Chunky magenta-pink book, tilted about 15 degrees, yellow star on the cover, small blue bookmark. |
+| "Shop" | Red shopping basket with a blue handle, filled with yellow blocks. |
+| "Rewards" | Gold stopwatch with a white face and dark hands. |
+| "Mount" | A small blocky figure riding a black ant. |
+
+- Notification badge: a red "!" ((250,14,5), tilted about 15 degrees, about 60% of icon height) overlaps the icon's top-right when there is something to claim. It appears on Rewards in one frame and on Index in another, and is absent in others.
+
+### 1.5 Right-side offer buttons
+
+All sit on the right edge and are paid-offer shortcuts.
+
+- **"Starter Pack"**
+  - Icon about 5% sw at 93% sw, 17% sh: an orange case overflowing with green and blue items.
+  - Label underneath, about 1.2% sh, coloured orange to yellow to green to teal across the word, dark outline.
+- **"X2 Cash"**
+  - Button spans 85.5-97.1% sw and 22.0-25.6% sh.
+  - Horizontal rainbow fill, left to right: (242,134,10), (249,231,43), (197,247,10), (68,218,144), (59,197,233), (54,75,254).
+  - White outlined text "X2 Cash", about 2% sh.
+  - Under it, small text "Only" (yellow-green), a white hexagon premium-currency glyph, and "9" (white). The price may be cut off.
+- **"Starfall Event"**
+  - Round picture about 8% sw at 92% sw, 32% sh: a dark blue starry dome with sparkles.
+  - Label "Starfall" in cyan (36,227,224) and "Event" in purple (133,10,195), about 1.7% sh, dark outline.
+
+### 1.6 Bottom-left cash readout, multiplier and backpack
+
+- **Cash**
+  - Text "$ 210.49K": space after "$", two decimals, capital suffix.
+  - Left edge about 1% sw, y 89.3-91.6% sh, about 2.3% sh tall.
+  - Lime green (108,247,11) to (131,248,12), with a very dark green-black outline about 3 px.
+  - No plate and no icon.
+- **Gain line**
+  - "+$ 209.14K" directly above the cash (86.4-88.1% sh), about 1.7% sh.
+  - Green (86,227,36), same outline.
+  - Seen only in the frame right after selling, so it is a temporary popup.
+- **Multiplier**
+  - At 93.4-97% sh: a green cash-bundle icon (about 4% sw) with two gold upward chevrons at its lower-left.
+  - Then "X1.5" in pale cream (249,226,178) with a dark-brown outline, about 1.8% sh.
+  - Values across frames: X1.5, X1.46, X1.09, X1.92, X0.65, X1.99, X0.82, X0.64, X0.98, X1.47.
+  - It mirrors the sell stand's "Price Multiplier" (they matched in two frames).
+- **Backpack**
+  - Bare icon at about 19.9% sw, 92.5% sh, about 3.8% sw, no label.
+  - Red-orange backpack with a cream flap, blue side pocket and two orange top loops.
+
+### 1.7 Bottom hotbar
+
+- Ten square slots, spanning 22.8-77.3% sw and 94.3-98.8% sh. Each is about 5% sw with a gap of about 0.5% sw.
+- Fill (73,73,74), nearly opaque, with a thin dark outline.
+- Slot number (1-9, 0) in tiny white text at the top-left.
+- A held item shows as a small picture with tiny text in the slot. Slot 1 holds a green jelly; a carried ant appears in slot 2 with cyan text.
+- The selected slot has a thin teal outline, about (57,141,115) to (96,184,126).
+
+### 1.8 Bottom-right visit timer
+
+- Appears only in later frames, so it is event-driven.
+- Small icon about 5% sw at 88.6% sw, 90% sh: a teal van or stall with a rainbow awning.
+- Tiny label "Food Buyer's Visit".
+- Timer below in mint (134,229,176) with a dark outline, about 2% sh. Format is "02 : 35", then bare seconds ("52", "37") under a minute.
+
+### 1.9 What hides when a window is open
+
+- **Hidden:** top-centre row, purple mini icon, top-right icons, event timer, left column, right offers, cash, multiplier, backpack.
+- **Stays:** hotbar and the bottom-right visit timer.
+- HUD is hidden in 7 of 9 window frames.
+- In two frames it is still visible: Daily Rewards, and one Settings frame where the window is drawn about 10% larger. These look like frames caught mid-transition **(guess: a pop/overshoot scale tween with the HUD hiding a moment after)**. An Items Shop frame is also about 7% larger than its twin.
+- Items Shop shows its own cash readout: "$28.64k" (lower-case k, no space), same lime style, outside the window to the lower-left (about 44% sw left of window centre, about 21% sh below). It scales with the window.
+
+---
+
+## 2. Windows
+
+### 2.1 Shared anatomy
+
+- **Placement and size**
+  - Centred horizontally; vertical centre about 46-52% sh.
+  - Width about 46-47% sw in this viewport, which is about 0.42-0.43 x screen height.
+  - Heights run 24-33% sh.
+  - No dimming of the world behind.
+- **Outer frame:** near-black outline about 3 px, corner radius about 6-8 px.
+- **Header bar**
+  - Full width, about 5% sh tall.
+  - Two flat bands (lighter upper about 45%, deeper lower about 55%) plus a dark line under it.
+- **Header icon:** at the left, about header height, slightly overlapping the left and top edges, tilted about 10-15 degrees.
+- **Title:** white, left-aligned after the icon, about 3% sh, dark outline about 3 px, title case.
+- **Close button**
+  - Red square at the header's right end, side about equal to header height. In one frame it pokes a few px above and right of the header.
+  - Fill (220,56,54) top to (196,42,34) bottom, with a darker red inner edge (150,24,28) and a dark outline.
+  - Fat white "X" (228,227,232), strokes about 20% of the button width with rounded ends.
+- **Body:** black at about 50-60% opacity, so the world shows through and it reads dark brown or olive. Content is inset about 2% of window width.
+- **Rows / inner panels:** slightly lighter or darker translucent rectangles with a thin 1 px lighter edge, radius about 4 px.
+
+| Window | Header top band | Header main band | Header icon |
+|---|---|---|---|
+| Claim Offline Rewards | (170,254,167) | (85,236,129) mint | yellow open box with a pink starburst coming out |
+| Items Shop | (75,182,240) | (37,133,237) blue | pink potion bottle |
+| Ants Index | (248,197,100) | (240,155,55) amber-orange | magenta book |
+| Daily Rewards | (142,255,75) | (78,240,76) lime | calendar with tick |
+| Playtime Rewards | (97,233,224) | (10,225,200) teal | gold stopwatch |
+| Settings | (254,154,92) | (238,124,48) orange | pale-blue gear |
+
+**Shared buttons.** All have a flat fill with a lighter top band, a dark outline of about 2 px, radius about 5 px, and white outlined text unless noted.
+
+| Button | Fill | Notes |
+|---|---|---|
+| Buy / price | (250,252,8) yellow | |
+| Disabled | (130,130,130), top band (190,190,190) | |
+| Confirm / toggle / redeem | (7,232,84) green | |
+| Remove | (250,58,56) red | |
+| Neutral choice | (2,153,224) blue | |
+| Premium price | (230,8,249) magenta | white hexagon glyph + number |
+| Restock | (32,250,250) cyan | |
+| Tabs | green (43,200,43) to (55,229,55); blue (56,179,250) | |
+| In-world cash price pill | (4,252,4) green | white outlined text |
+
+### 2.2 Claim Offline Rewards
+
+- **Size:** 47% sw x 24% sh. No close button is visible, so the player must pick a button.
+- **Headline:** "Welcome Back!" in yellow (252,252,81), about 4% sh, heavy black outline, centred.
+- **Subtitle:** "You've been offline for 04H 00M" in pale yellow-green (231,250,128), about 1.4% sh.
+- **Reward strip**
+  - One dark strip (13,15,6) at about 85% opacity and about 54% of window width, split in two by a thin grey divider.
+  - Left half: caption "Keep 1x" (white, small) over a red apple icon and "144K" (white, about 2.2% sh).
+  - Right half: caption "Keep 3x" (yellow-green) over an apple and "432K" in an orange (250,112,30) to yellow gradient.
+- **Buttons**
+  - "Keep 1x": blue, about 33% of window width x 4.5% sh, text about 2.6% sh.
+  - "Keep 3x": slightly smaller, diagonal rainbow fill (teal-green, blue, red, yellow, green) with two small white sparkles.
+  - Under "Keep 3x": a hexagon glyph and "99" in small white text.
+
+### 2.3 Items Shop
+
+- **Size:** 47% sw x 30.5% sh. A vertically scrolling list; about 2.7 rows are visible.
+- **Row frame:** about 8.3% sh tall with a 0.5% sh gap. Fill is slightly darker than the body with a thin edge.
+- **Thumbnail**
+  - Left square, about 14% of row width, fill (31,31,32), holding a 3D item picture.
+  - "Stock: N" overlaps the thumbnail's bottom edge (about 1.5% sh): pink-red (227,101,106) when 0, white when above 0.
+- **Middle column**
+  - Item name about 2% sh, coloured by rarity.
+  - Price in bright green (60,228,12), about 2% sh: "$10k", "$100k", "$1M".
+  - White description. Short text renders larger ("Remove Ant Mutation", about 1.6% sh); long text shrinks (about 0.9% sh).
+- **Right column**
+  - Main button about 24% of row width x 37% of row height: yellow "BUY", or grey "No Stock" when stock is 0.
+  - Under it: a small magenta square with a red-and-yellow gift box, and a magenta pill with a hexagon glyph and "3" / "6" / "9".
+- **Under the window**
+  - Left: "Restocks in: 03:46", white outlined, about 2% sh, counting down.
+  - Right: small cyan button "RESTOCK", hexagon glyph, "9".
+
+Rows seen:
+
+| Name | Name colour | Price | Stock | Description |
+|---|---|---|---|---|
+| "Normal Speed Jelly" | grey (158-228 greys) | $10k | 0 | "Boosts the movement speed of equipped ants by 1.3x for 5 minutes." |
+| "Mutation Removal Potion" | purple (150,86,206) | $100k | 1 | "Remove Ant Mutation" |
+| "Leaf Mutation Potion" | sky blue (60,179,227) to (132,225,231) | $1M | 0 | "Applies the Leaf Mutation to the ant..." (rest unreadable) |
+
+### 2.4 Ants Index
+
+Four separate dark panels make up this window.
+
+**Main window** (37.7% sw x 26% sh, header about 4% sh)
+- Grid of 5 columns of square cards, each about 6.5% sw, gap about 0.4% sw. It scrolls vertically.
+- Card fill is a vertical gradient: saturated at the top, lighter at the bottom, in the rarity colour.
+- Card contents:
+  - Top: tiny white name ("Common Ant", "Basic Ice Ant", "Giant Claw Ant", "Wheel Ant"), or "???" if undiscovered.
+  - Centre: full-colour picture if discovered; solid black silhouette if not.
+  - Bottom: rarity word in white, outlined, about 22% of card height.
+- Selected card: yellow outline (228,227,49), about 2-3 px, rounded.
+- Row order seen: 1 Common, 5 Uncommon, 5 Rare, about 5 Epic, then an orange row (cut off).
+
+**Side tabs** (outside the left edge, stacked, each about 12% sw x 3% sh)
+- "Ants" in green and "Mutations" in blue, white outlined text.
+- A red dot (247,3,5), about 1.7% sw, sits on the top-right corner of "Ants" when something is claimable.
+
+**Detail card** (right of the main window, 15% sw x 21% sh)
+- Square preview with a grey gradient (about (130,130,130) to (203,203,203)), a thin dark border and a 3D model.
+- Name in white, about 1.8% sh.
+- Rarity word, smaller.
+- "EFF: 150" in pale yellow (222,234,108), outlined.
+
+**Progress strip** (below the main window, same width, about 5.7% sh)
+- Label "Ants Discovered" (two lines, small white) with a small pink book.
+- Bar: fill (57,255,56) on a black track, about 55% of strip width.
+- Text "3/5 (60%)" below-left.
+- Two square reward tiles at the right with rainbow backgrounds. The first is labelled "Cash"; the second is unreadable.
+- At 60% the tiles are dimmed. At "5/5 (100%)" the bar is full, the tiles are bright, and each tile gets a red dot.
+- The 5 looks like a milestone target, not the total number of ants **(guess)**.
+
+### 2.5 Daily Rewards
+
+- **Size:** 45.6% sw x 30% sh.
+- **Layout**
+  - A 3 x 2 grid of small cards (Day 1-6), each about 21% of window width x 33% of window height.
+  - One tall Day 7 card on the right, about 30% of window width, spanning both rows.
+- **Small card contents**
+  - Dark vertical-gradient background with a 2 px coloured outline and a bright band along the bottom.
+  - Top: item name, tiny white, up to 2 lines.
+  - Then the rarity word in its rarity colour.
+  - Centre: item picture.
+  - Quantity "x1" / "x3" / "x15" / "x20" in white, outlined, about 2.2% sh, at the picture's bottom-right.
+  - Bottom: grey glossy pill ((224,225,226) top to (154,155,154)) reading "Day2" ... "Day6" in white outlined text.
+- **Frame tints.** Three are seen, with no clear rule:
+  - dark purple (27,2,31) to (67,1,91) with a magenta (209,0,225) edge;
+  - dark brown (38,17,0) with a gold (231,169,24) edge;
+  - navy (29,33,130) with a cyan (0,132,198) edge.
+- **Rewards seen**
+  - Day 2: "Flying Saucer Ant", Mythic.
+  - Day 3: "Candy Mutation Potion", Rare.
+  - Day 4: "Strong Speed Jelly", Rare.
+  - Day 5: "Rainbow Mutation Potion", Legendary.
+  - Day 6: "Super Speed Jelly", Epic.
+- **Claimed state (Day 1)**
+  - Card blacked out, name dimmed.
+  - Large lime tick across the picture.
+  - "Claimed" in bright green (34,226,34) replaces the pill.
+- **Day 7 card**
+  - Vertical rainbow fill: (250,61,190) at top, (228,182,94) mid, (196,243,25), (145,249,102), (46,187,255) at the bottom.
+  - "Superman Ant" in white.
+  - "Secret" in a purple to light-blue gradient, about 3% sh.
+  - Big picture, "x1" about 4.5% sh, larger "Day7" pill.
+
+### 2.6 Playtime Rewards
+
+- **Size:** 45.7% sw x 33% sh.
+- **Layout:** a 4 x 3 grid of cards, each about 16% of window width and roughly square, with wide gaps (about 6% of window width).
+- **Card build**
+  - Strong-coloured header strip (about 22% of card height) holding the reward name.
+  - The name is dark maroon (86,36,34) with a white outline, the inverse of the usual text style.
+  - Paler body of the same hue with the picture.
+  - Countdown at the bottom: white, outlined, about 1.7% sh.
+- **Card colours** (rule unclear):
+  - orange: header (250,131,59), body (250,214,162);
+  - pink: header (208,62,179), body (221,184,218) to (230,117,199);
+  - yellow: header (251,249,107), body (252,246,168).
+- **Rewards and timers**, in grid order:
+  1. "$20K" - claimed.
+  2. "Normal Speed Jelly" - claimed.
+  3. "Basic Flame Ant" - claimable.
+  4. "$40K" - 04:58.
+  5. "Strong Speed Jelly" x3 - 09:58.
+  6. "$80K" - 19:58.
+  7. "Giant Claw Ant" - 34:58.
+  8. "$100K" - 49:58.
+  9. "Long Ant" - 64:58.
+  10. "$150K" - 89:58.
+  11. "$220K" - 99:58.
+  12. Name unreadable **(guess: "Camouflaged Ant")** - 109:58.
+- Minutes run past 60 with no hours.
+- Pictures: cash rewards show a green cash pile; the two largest show a gold chest of cash.
+- **States**
+  - Waiting: countdown shown.
+  - Claimable: white sunburst rays behind the picture and a green "Claim" pill (105,223,83) in place of the timer.
+  - Claimed: card washed to brown-grey (115,102,81), big lime tick, "Claimed!" in green.
+
+### 2.7 Settings
+
+- **Size:** 47% sw x 31% sh. The body is split into two inner panels, left about 62% and right about 38%, each with a thin dark border.
+- **Left panel**
+  - Heading "--General--" with literal double hyphens, white, about 3% sh, outlined.
+  - Scrolling rows about 3.4% sh tall: grey bar about (71,70,75) at about 60% opacity with a lighter top edge.
+  - Row label on the left: white, about 1.5% sh.
+  - Green "ON" toggle on the right: (4,246,86), about 21% of row width, white bold text.
+  - Rows: "Current Queen Ant Level" (a small blue icon instead of a toggle, unreadable), "Music", "Low Performance", "SFX", "Show Ants Mutation Effects", and more below.
+  - No OFF state is visible.
+- **Right panel**
+  - Heading "--Code--".
+  - Empty input box: (55,55,55), radius about 4 px, about 3.6% sh tall.
+  - Green "Redeem" button, about 12.5% sw wide.
+  - Three small red-and-yellow gift icons appear in this panel in one frame only **(guess: animated decoration)**.
+
+---
+
+## 3. In-world popups and text
+
+### 3.1 Ant info popup
+
+Shown when a nest slot is selected.
+
+- **Panel**
+  - About 32% sw x 15% sh, placed to the right of the selected slot.
+  - Dark grey-black at about 45% opacity with a slightly darker top strip.
+  - Thin dark outline, radius about 4 px.
+- **Contents**
+  - Title "Basic Ice Ant" in rarity green (105,206,13), about 2.5% sh, centred.
+  - Row 2: "Uncommon" (green, about 1.8% sh) on the left; on the right a white word cut off as "Non..." **(guess: "None", the mutation)**.
+  - Row 3: "LV.1" in white bold (about 2.4% sh) on the left; "42..." on the right (the 420 efficiency value).
+  - Bottom buttons, each about 30% of popup width x 21% of popup height:
+    - yellow button with green outlined text "$30" **(guess: level-up price)**;
+    - red button "REMOVE" in white capitals.
+- **Selection cues**
+  - A white downward-pointing 3D arrow floats above the selected slot.
+  - A thin white highlight outline is drawn on the selected slot.
+
+### 3.2 Press-E prompts
+
+- These look like Roblox's default proximity prompt.
+- Dark rounded rectangle, about (38,32,29) at about 70% opacity, radius about 8 px, about 15% sw x 8% sh.
+- A circular key badge with a rounded-square "E" sits at the left.
+- White regular-weight action text at the right: "Get", "Sell Food", "Purchase Ants".
+- The last one also shows a smaller grey object line above it: "$26000".
+
+### 3.3 Big floating station titles
+
+- **Wording seen:** "Sell Food", "Items Shop", "Resource Converter", "Skins". "Trash" is in pure yellow.
+- **Style:** orange-yellow (250,196,7) to (249,185,6) with a thick near-black outline (about 8% of text height). No plate. They scale with distance.
+- **Sell stand block**, under "Sell Food":
+  - "Price Multiplier : 1.92X". The label is white; the value was lime (157,246,13) at 1.92X and yellow at 1.29X.
+  - Bar: black track and outline, about 1.6x the title width.
+  - Bar fill is a fixed left-to-right gradient: (248,2,17), (248,137,3), (253,212,0), (243,247,0), (175,251,3), (73,255,9).
+  - The fill is revealed up to the current value: about 57% at 1.29X and about 97% at 1.92X **(guess: roughly 0.4X empty to 2X full)**.
+  - A small yellow (247,233,9) downward triangle marks the fill end.
+  - "Refresh: 11 s" in white with the number in red (246,5,11). It ticks down each second and the multiplier re-rolls at 0.
+- **Counter sign:** a big yellow number with a black outline on an apple-shaped board: 147.75K, then 0 after selling, then 420.
+- **Paid food board:** a small sign with two rows, "120k" with glyph "29" on yellow and "480k" with glyph "99" on magenta, each with an apple icon.
+- **Rank boards:** tall orange boards titled "Cash Rank", "EFF Rank", "Online Rank" (white outlined on an orange plaque). Rows are unreadable.
+- **Upgrade board cards** (surface UI)
+  - Rounded cards with a vertical gradient, an icon at the left, a white outlined title, a coloured effect line and a price pill.
+  - "Expand the Ant Nest" - "Floor +1" (cyan) - "$100K" on a grey-white pill. Magenta card.
+  - "Food Gain Multi" - "+0% > +20%" (lime) - "$8K" on a green pill. Cyan-to-blue card.
+  - "Ant Speed" - "+0 > +0.2" (lime) - "$20K" on a green pill. Salmon-to-red card.
+  - Cash at the time was 52.18K, so the grey pill may mean "cannot afford" **(guess)**.
+
+### 3.4 Shop sign and "New!!" tag
+
+- **Sign:** navy panel (37,33,68) with a border of alternating red and yellow blocks.
+- **Text on it**
+  - "Ant Head Ant" in white bold with a black outline.
+  - "Rare" in light cyan (158,247,251).
+  - Green price pill "$26K" with white outlined text, about 40% of sign width.
+- **"New!!" tag:** cyan (7,249,251) with a dark navy outline, rotated about 35 degrees clockwise, overlapping the sign's top-right corner. Slightly larger than the name text.
+
+### 3.5 Nest slot labels, numbers over ants, carried tag
+
+- **Slot labels**
+  - Name above the ant in rarity colour: "Common Ant" white-grey, "Basic Ice Ant" green.
+  - "EFF:150" below in white-grey, small, outlined.
+  - The doorway arch colour also follows rarity: pale lilac-white for Common, lime (127,229,31) for Uncommon.
+- **Locked slot:** a large gold padlock with a hexagonal body and black keyhole.
+- **Empty slot:** "Empty" in green (seen once, through a window).
+- **Food badge:** a red pixel apple with a yellow outlined number over its bottom ("150", "420"), floating over an ant or its cart.
+- **Boost timer:** a green jelly icon on the nest ledge with white "00:45" on it, counting down (00:51 to 00:27 across frames).
+- **Carried-ant tag** (stacked, centred above the held ant, all with black outlines):
+  1. name, white, largest (cut off; **guess** "Wheel Ant");
+  2. "Rare", light cyan (155,247,251);
+  3. "LV.1", small yellow, partly hidden;
+  4. "EFF:2.4K", white, large.
+
+### 3.6 Centre-screen announcements
+
+- Wording seen: "Unlock Successfully" and "A dungeon has appeared!".
+- Position: centred, y about 21% sh, just under the event timer.
+- Style: green (62,206,62) to (80,226,82) with a dark outline about 2 px, about 2.4% sh, no plate.
+- Temporary: present in one frame each.
+
+---
+
+## 4. Rarity colours
+
+| Rarity | Text colour | Card / background | Where confirmed |
+|---|---|---|---|
+| Common | white to light grey (about (200,200,200)) | grey gradient (125,129,128) to (190,196,192) | Index card, slot label; shop name **(guess: that item is Common)** |
+| Uncommon | green (105,206,13) | lime gradient (44,255,21) to (207,255,99) | Index, ant popup, slot label and arch |
+| Rare | light cyan (155,247,251); sky blue (60,179,227) in the shop list | blue gradient (25,115,255) to (90,225,254) | Index, shop sign, carried tag, Daily Rewards |
+| Epic | purple (150,86,206) | purple-pink gradient (193,35,246) to (253,109,232) | Index, Daily Rewards, shop name |
+| Legendary | gold (203,180,61), small text so approximate | orange (241,149,2) **(probable: the Index row after Epic, label not visible)** | Daily Rewards text only |
+| Mythic | red (200,9,15) | not seen | Daily Rewards text only |
+| Secret | purple to light-blue gradient text | vertical rainbow (250,61,190), (228,182,94), (196,243,25), (46,187,255) | Daily Rewards Day 7 only |
+
+---
+
+## 5. Rebuild recipe for the bee game
+
+**HUD**
+- **Top-centre row:** "Equip Best" (magenta), "My Hive" (amber, centre, 1.3x bigger, original beehive icon from stacked rounded bars or a ViewportFrame), "Upgrade Shop" (blue, honey-jar icon). This moves the two current right-side buttons to the top centre. Keep the two-band fills and dark outline.
+- **Top-right mini icons:** only for windows that exist, for example a gear for Settings and a calendar for Daily Rewards. Bare icons, no plates.
+- **Event timer text:** add only if the bee game gets timed events, as two small white outlined lines at 14-16% sh.
+- **Left column:** "Index" (book with a honeycomb hexagon on the cover), "Shop" (basket of honey jars), "Rewards" (stopwatch); skip "Mount". Icon over white outlined label, red "!" badge when claimable.
+- **Right-side offers:** optional; skip unless the game sells passes. If used, one rainbow "x2 Honey" pill.
+- **Coins, jars and rate:** replace the three left pills with plate-less outlined text at bottom-left. Coins in lime "$ 12.34K"; a "+$" gain line that pops after selling; a honey-jar icon with cream "X1.5" for the Honey Market price multiplier.
+- **Backpack:** a small backpack icon beside the coins, showing the jar count (Backpack upgrade).
+- **Hint pill:** keep it, restyled as plain green outlined announcement text at 21% sh.
+- **Hotbar:** Roblox's built-in bar; nothing to build unless bees become Tools.
+- **Window open:** hide everything in the HUD except any hotbar, and pop the window in with a slight overshoot.
+
+**Windows**
+- **Window kit:** one Panel helper with a two-band header (UIGradient with a hard stop at about 45%), tilted icon, white FredokaOne title with UIStroke, red square "X", and a black 55%-transparent body.
+- **Header colours:** My Hive amber, Upgrade Shop blue, Bee Index orange, Daily lime, Playtime teal, Settings orange, Welcome Back mint.
+- **Welcome Back (offline honey):** mint header, yellow "Welcome Back!", dark strip with a jar icon and amount, one blue "Collect" button. Add the rainbow x3 button only if a paid option exists.
+- **Upgrade Shop rows:** one row each for Beehive, Backpack, Queen's Luck, Bee Speed. Dark thumbnail, name, lime price, white "+0 > +0.2" style effect line, yellow "BUY" (grey when unaffordable or maxed).
+- **Bee Index:** 5-column grid of rarity-gradient cards with black silhouettes and "???" until discovered. Green "Bees" side tab, right detail card (ViewportFrame, name, rarity, rate), "Bees Discovered" bar with reward tiles and red dots.
+- **Daily Rewards:** 3 x 2 dark cards plus a tall rainbow Day 7 card with a rare bee. Grey "Day N" pills, lime tick and "Claimed".
+- **Playtime Rewards:** 4 x 3 two-tone cards with countdowns, a green "Claim" pill with sunburst, washed-out "Claimed!" state. Rewards are coins, jars and bees.
+- **Settings:** "--General--" rows with green "ON" toggles (Music, SFX, Low Performance) and a "--Code--" column with an input and green "Redeem".
+
+**In-world**
+- **Bee info popup:** dark translucent card beside the selected hive slot. Bee name and rarity in rarity colour, "LV.1", honey rate, yellow upgrade-price button, red "REMOVE"; white arrow over the slot.
+- **Prompts:** keep default ProximityPrompts ("Sell Honey", "Roll", "Buy").
+- **Station titles:** orange-yellow outlined BillboardGui titles: "Honey Market", "Queen Bee", "Upgrade Shop", "Flower Garden".
+- **Honey Market block:** "Price Multiplier : 1.50X", the red-to-green bar with a yellow marker, and "Refresh: 11 s" with a red number.
+- **Hive slot labels:** bee name in rarity colour above, rate below, slot frame tinted by rarity, gold padlock for locked, green "Empty".
+- **Number over bees:** a honey-jar icon with a yellow outlined number while a bee carries honey.
+- **Carried or just-rolled bee tag:** name (white), rarity (rarity colour), level (yellow), rate (white), stacked.
+- **"New!!" tag:** cyan, rotated about 35 degrees, on newly unlocked roll or shop signs. Navy sign, green price pill.
+- **Rarity colours:** reuse the table above unchanged for bees.

@@ -1,0 +1,248 @@
+# Walk-up builds spec: roll station, upgrade boards, sell stand, nest
+
+All stud sizes are estimates from perspective (about ±25%), scaled against a character about 5 studs tall (5.5 with hat). Anything marked "guess" was inferred or too small to read.
+
+## 0. Shared style
+
+- **Material look:** everything is blocky "toy brick" parts with a raised square stud grid on visible faces. There are no smooth curves; round shapes are stepped (staircase corners).
+- **Ground:** bright green studded baseplate (70,200,60) with lighter patches (175,235,120), orange paths (240,130,50), dirt patches (120,70,45).
+- **Fonts:** upgrade boards and the sell header use a rounded, playful bold face (FredokaOne is a close match). Stall screens, nest labels and the carried-creature label use a heavy geometric sans. Using FredokaOne everywhere is fine.
+- **Text treatment:** white fill with a black or dark-navy outline, about 8–10% of text height. Coloured words (rarity, values) keep the same dark outline.
+- **Price pill:** rounded rectangle, corner radius about 15–20% of pill height, bright green (50,205,60) with a darker green edge (20,140,30). White bold text with black outline, text about 60% of pill height.
+- **Interaction:** default Roblox ProximityPrompt (dark translucent rounded box, "E" key badge). Wording seen: "Roll A…" (cut off) at the Queen, "Purchase Ants" with "$26000" above it at a stall, "Get" at the sell crates, "Interact" at a small side sign.
+
+| Rarity | Text colour | Doorway arch colour | Sparkles round the creature |
+|---|---|---|---|
+| Common | light grey (205,205,205) | white-lavender (235,230,250) | small white squares |
+| Uncommon | green (90,225,60) | lime green (110,220,40) | green 4-point stars |
+| Rare | light cyan-blue (125,215,235) | light blue (110,180,250) | cyan 4-point stars and glow |
+| Epic | purple (185,95,255) | purple (150,90,240), guess from distant nests | magenta/pink glow and stars |
+| Higher | not seen | red/crimson (220,50,70), guess from distant nests | not seen |
+
+## 1. Roll station
+
+### Layout
+- The Queen sits on a round pedestal at the front centre.
+- A leaning block-letter sign stands on the ground in front of the pedestal, touching its rim.
+- The offer stalls stand in a straight or slightly arced row about 8–10 studs behind the Queen, screens facing her.
+- Early frames show one stall and later frames show three. This matches the "Egg Rolls" upgrade level (1, then 3), so stall count probably equals that upgrade (inference).
+
+### Queen, gold jewelled version (early frames)
+- **Size:** about 5 studs long and 3.5 studs tall, on a pedestal about 1 stud high.
+- **Abdomen:** large ovoid, about 3 studs across, in stepped bands of white (245,245,245), light grey (190,190,200) and black (30,30,35).
+- **Head and thorax:** black, with white square eyes and grey-lilac bent antennae.
+- **Crown:** small gold crown (255,200,40) with 3–5 points.
+- **Legs:** thin and black, splayed over the pedestal.
+- **Pedestal:** two-step round (octagonal, stepped) tan-wood disc (215,170,110), about 8–9 studs across, each step about 0.5 stud.
+- **Rim:** a low gold ring (255,190,40) with gold knob finials (two stacked rounded blocks, about 1 stud tall) every 2 studs or so. Purple oval gems (140,60,200) sit between the knobs.
+
+### Queen, ice-crystal version (later frames)
+- The same station later shows this skin. It probably swaps as luck upgrades rise (gold at 1x, ice at 9x–10x); that is a guess.
+- **Body:** dark navy (25,30,60) with glowing pale-blue square eyes (200,235,255, neon). The gold crown is kept.
+- **Abdomen:** a fan of large ice shards pointing up and back, in light blue (140,190,250), mid blue (90,130,230) and white tips. The top of the shards reaches about character head height (5–6 studs).
+- **Pedestal:** white and pale-blue (220,235,255) stepped disc, about 8–9 studs across.
+- **Rim:** curved low rail pieces in blue-lavender (150,170,240), with upright crystal spikes about 1.5 studs tall on round blue bases every 2.5 studs or so.
+- **Extras:** small cyan snowflake shapes at the front and a few white sparkles.
+
+### Block-letter sign
+- **Wording:** "RollAnt" (one word, capital R and A).
+- **Plate:** orange studded (240,130,40), about 6 studs wide, 2.2 tall and 0.5 thick, leaning back about 20–25°.
+- **Edges:** darker orange rim (200,100,30) about 0.3 stud; thin green strip (60,190,60) along the top edge.
+- **Letters:** white studded bricks, pixel style, about 1.5 studs tall with a 0.4 stud stroke, raised slightly off the plate.
+
+### Offer stall
+- **Body:** box about 6 studs wide, 4.5 tall and 5 deep. Sides and back are white-lavender studded brick (225,220,245).
+- **Top:** orange-tan studded band (225,145,65) about 1 stud tall, capped with a green slab (60,190,60) about 0.3 stud.
+- **Screen frame:** fills the front face. Red (220,30,30), about 0.6 stud thick, with red studded corner blocks.
+- **Lights:** glowing yellow square "bulbs" (255,230,40, neon) alternate with red along the frame, about 5 per long side and 3 per short side. Whether they blink or chase cannot be seen in stills; a chase is a guess.
+- **Screen:** dark navy (30,30,60), three centred lines:
+  1. Name, white, text about 17% of screen height, at 20% from the top (for example "Common Ant", "Ant Head Ant").
+  2. Rarity word in its rarity colour, about 19% of screen height, at 45% ("Common", "Uncommon", "Rare", "Epic").
+  3. Price pill, about 55% of screen width and 28% of height, centred at 75% ("$45", "$300", "$750", "$1.8K", "$26K", "$660K").
+- **Pill state:** the stall pill stays green even when the player cannot afford it ($660K offer with $52K cash).
+- **"New!!" tag:** cyan (60,230,230) bold text with dark-navy outline, rotated about 30° clockwise, overlapping the top-right corner of the frame, about 1.3 times the name text size. It shows on some offers only, probably creatures not yet discovered (guess).
+- **Empty state:** the screen is blank navy with the frame still lit.
+- **Creature on top:** the offered creature stands centred on the green cap, about 2.5–3 studs tall, facing the player.
+- **Sparkles:** particles in the rarity colour drift around the creature (see table).
+- **Light beam:** some stalls have a soft translucent column about 2 studs wide rising far into the sky, pale yellow-white or greenish. Which stalls get one is unclear.
+- **Changes between frames:** the offers re-roll. Roughly 10 seconds apart, the middle stall went from Golden Ant to Common Ant and the right from Basic Flame Ant to Pumpkin Ant, while the left stayed.
+
+### Buying and carrying
+- Walking up to a stall shows the prompt (price above, "Purchase Ants").
+- After buying, cash drops by the price (52.18K to 26.18K for a $26K offer).
+- The creature appears held above the head with both arms straight up. It is scaled up to about 4 studs and floats about 0.5 stud above the hat.
+- It also appears as a tool in hotbar slot 2.
+- **Label above the carried creature**, stacked and centred:
+  - Name: white, thick black outline, the largest line, about 6% of screen height when the camera is close.
+  - Rarity: rarity colour, about 4.5%.
+  - A small yellow line, partly hidden, probably a level such as "LV.1" (guess).
+  - "EFF:1.8K": white with black outline, about 4.5%.
+- In one frame the carried thing is a glowing yellow-green translucent cube (about 3 studs) on a white square tray. It is too small to tell whether this is an egg or a cube-shaped creature.
+- The player then walks to the nest. Placing it into a slot was not captured.
+
+## 2. Upgrade boards
+
+Two free-standing boards stand side by side, angled slightly toward each other, about 2 studs apart, near the roll station.
+
+### Frame
+- **Posts:** two tan-orange studded posts (215,150,85) about 0.8 stud wide, full height.
+- **Beam:** dark brown crossbeam (120,70,50) on top, overhanging about 1 stud each side, with grey stone blocks (150,150,165) at the ends.
+- **Header:** an orange studded plaque (255,140,30) sits centred on the beam. Any text on it is unreadable.
+- **Decoration:** small leafy plants on the beam ends.
+- **Lamp:** one small hanging lantern with a glowing warm-yellow bulb (255,240,120, neon), on the outer end of each beam (left end of the left board, right end of the right board).
+- **Feet and base:** two short dark-brown legs lift the board about 1 stud. It stands on a two-step green slab base (60,190,60 over 40,160,70), each step about 0.5 stud, with grass tufts.
+- **Size:** left board about 8.5 wide and 11.5 tall in total (three panels). Right board is the same width and about 8 tall (two panels).
+
+### Panel anatomy
+- **Size:** about 7.5 by 3.4 studs (roughly 2.2 : 1).
+- **Shape:** rounded rectangle, corner radius about 8% of panel height, thin dark outline. A dark backing shows in a gap of about 0.15 stud between panels.
+- **Title:** top centre, white with black outline, about 20% of panel height, tilted up to the right about 3–5°.
+- **Icon:** left, about 40% of panel height, with a dark outline.
+- **Value text:** centre-right, about 22% of panel height on the left board and about 35% on the right board.
+- **Price pill:** bottom centre-right, about 33% of panel width and 22% of height.
+- **Pill states:** green when affordable; pale lavender-grey (215,215,235) with the same white outlined text when not. With $5.48K cash, "$800" was green while "$8K" and "$28K" were grey.
+
+### Panels
+
+| Board | Title | Background gradient | Icon | Value text | Prices seen |
+|---|---|---|---|---|---|
+| Left 1 | "Expand the Ant Nest" | hot pink (255,90,190) left to violet (175,90,255) right | orange-yellow stepped pyramid with black doorways | "Floor +1", cyan (40,200,255) | $800, later $100K |
+| Left 2 | "Food Gain Multiplier" | cyan (40,215,255) to blue (50,140,255) | red apple, green leaf, small yellow up-arrow at lower right | "+0% > +20%", lime (120,255,40) | $8K |
+| Left 3 | "Ant Speed" | peach (255,190,140) top to red (255,50,50) bottom | black ant with pale-blue speed streaks | "+0 > +0.2", lime | $28K |
+| Right 1 | "Upgrade Egg Luck" | yellow (255,240,40) left, pink (255,130,200) middle, purple (200,110,255) right | green four-leaf clover (40,210,90) | "1x > 2x", lime; later "9x > 10x", "10x > 11x" | $1.5K, $100K, $161K |
+| Right 2 | "Egg Rolls" | magenta-pink (255,90,220) to slightly purple (235,80,255) | white die, black pips, one red pip | "1 > 2", turquoise (40,220,230); later "3 > 4" | first price unreadable (about $180, guess), later $100K |
+
+- After a purchase, the value text shifts up one step and the price rises.
+- A small side sign stands nearby: orange studded board on a post with a green top, white text "Group Reward", a white pointing-hand shape and a small creature beside it. It is optional and probably not needed.
+
+## 3. Sell Food stand
+
+### Platform
+- **Floor:** tan studded (205,165,110), about 20 by 16 studs, raised about 0.5 stud.
+- **Border:** bright yellow (255,225,50), about 1.5–2 studs wide, with a jagged, stepped outline.
+
+### Stall
+- **Back row:** dirt blocks (110,75,50) with bright grass tops (60,220,40) at stepped heights of 3–6 studs.
+- **Shelf unit:** red-brown brick (170,90,60), about 5 wide and 5 tall, two shelves holding cream boxes and yellow blocks.
+- **Crates:** dark-brown wooden crates about 3 studs cubed (120,70,50) with X-bracing, each face showing a red pixel apple. They are stacked 2–3 wide at the front right.
+- **Produce:** open crates of orange carrots with green tops, purple berries, yellow blocks and red apples.
+- **Feature piece:** a large voxel pile of red apples (220,30,40) on a green base at the left, about 3 studs, with small red pieces scattered on the floor.
+
+### Big amount sign
+- **Position:** mounted above the stall, bottom edge about 6 studs up.
+- **Size and shape:** about 10 studs wide and 7 tall, a stepped rounded blob like a fruit silhouette.
+- **Colours:** red studded border (235,25,25) about 1 stud thick; cream-tan studded interior (240,200,140).
+- **Top:** brown stem and green leaf blocks at the top centre.
+- **Number:** the amount of food the player is carrying, centred. Yellow (255,220,0) with a thick black outline, rounded bold, about 2.5 studs tall. It read "0" in both frames.
+
+### World label
+- "Sell Food" floats above the stand and is visible from far away: yellow-orange text with a dark outline, small.
+
+### Price-multiplier header
+- It appears on screen when the player is at the stand. It looks like screen-space UI at the top left; it could be a billboard (guess).
+- The group is centred at about 25% of screen width.
+- **"Sell Food":** about 13–17% from the top. Rounded bold, vertical gradient from yellow (255,225,50) to orange (255,160,20), black outline, text about 4.5% of screen height.
+- **"Price Multiplier : 1.82X":** about 18–21% from the top. White with black outline, about 3.2% of screen height. The value is yellow-green (200,240,40).
+- **Bar:** about 24.5–26.5% from the top, 36% of screen width, 2.2% of screen height, near-square corners, 2 px black outline.
+  - Fill gradient left to right: red (255,30,30), orange (255,150,0) at about 35%, yellow (255,240,0) at about 60%, green (60,220,40) at the end.
+  - The unfilled remainder is black.
+  - At 1.82X the fill ended at about 90%, so the fill is probably multiplier divided by 2.0 (guess).
+- **Marker:** a small yellow downward triangle with black outline, about 1.7% of screen width, sitting on the bar's top edge at the end of the fill.
+- **"Refresh: 10 s":** about 28.5–32% from the top. White with black outline, about 3.5% of screen height; the number is red (255,40,40). It counts down, and the multiplier re-rolls at zero.
+- The same multiplier shows in the bottom-left HUD as "x1.82". Values seen across frames ran from x0.54 to x1.92.
+
+### Small price board
+- **Position:** beside the stand on the right, on an orange-brown post.
+- **Board:** about 7 wide and 4.5 tall, orange studded frame (225,140,60) with a green strip on top.
+- **Rows:** two stacked rounded rows.
+  - Row 1: yellow-orange background (250,200,40), apple icon, "120k" in white with black outline, then a pale rounded pill with a hexagonal premium-currency icon and "29".
+  - Row 2: pink-purple background (230,90,200 to 190,100,240), "480k", pill "99".
+- This is a paid food-pack board.
+
+## 4. Nest
+
+### Pyramid
+- **Shape:** tiers with one doorway fewer each level; 3, 2, 1 in the frames.
+- **Growth:** other players' nests in the distance have 5 or more rows, so "Floor +1" adds a row.
+- **Tier size:** each tier is (number of doorways × 4.5 studs) wide and about 4 studs tall, centred on the tier below. That gives 13.5, 9 and 4.5 wide, about 12 studs tall in total.
+- **Tier material:** red-brown dirt studded block (150,85,55), about 3.4 studs, capped with a green grass slab (60,170,50), about 0.6 stud, overhanging slightly.
+- **Ledges:** each tier steps back about 2 studs, leaving a grass ledge wide enough for a cart. Overall depth is unknown; 8, 6 and 4 studs is a guess.
+- **Decoration:** tall grass tufts at the ledge ends and a tuft with a yellow-orange flower on the top.
+- **Base:** darker green slab about 0.4 stud high, extending about 1.5 studs in front.
+- **Plot ground:** patchwork of two greens and dirt brown.
+
+### Doorways
+- **Arch:** stepped pixel arch frame about 3.4 wide and 3.3 tall, about 0.6 stud thick, with staircase corners (3 steps). It stands slightly proud of the dirt wall.
+- **Opening:** about 2.2 wide and 2.6 tall, near-black (30,25,25).
+- **Arch colour by state:**
+  - Locked or empty: orange-tan (245,165,90).
+  - Occupied: the occupant's rarity colour (see table). Common white-lavender, Uncommon green and Rare light blue were all seen.
+- **Occupied slot:**
+  - The creature (about 2 studs) stands in the opening facing out.
+  - Its name runs across the top of the opening in rarity colour with a dark outline, about 12% of doorway height ("Common Ant" white, "Basic Ice Ant" green).
+  - "EFF:150" or "EFF:420" runs across the bottom in white with black outline, the same size.
+- **Locked slot:**
+  - A gold padlock fills the opening, about 2.4 wide and 3 tall.
+  - Body: hexagonal, gold (255,200,30) with a lighter face (255,230,90) and darker rim (215,150,20).
+  - Keyhole: black, a circle over a wedge.
+  - Shackle: silver-grey arch (190,190,200).
+- **Empty slot:** dark opening with the word "Empty" centred in bold green (30,190,40), about 22% of doorway height.
+
+### Things above and around the slots
+- **Timers:**
+  - About 0.5 stud above the arch sits a small pale-green translucent jelly blob (170,235,160) on a white plate, about 1 stud.
+  - Under it is a dark translucent capsule with a white mm:ss countdown ("01:03", "02:16", later "00:57", "02:10").
+  - One was above an occupied Uncommon slot and one above a newly filled light-blue slot.
+  - Purpose is unclear: a hatch or grow timer, or a timed boost (guess).
+- **Delivery pop-up:** a red apple icon with a yellow number ("150", matching that ant's EFF) appeared in a doorway. It probably shows food delivered per trip (guess).
+- **Carts:**
+  - About 2.2 long and 1.5 tall. Yellow-orange box (240,180,60) with a grey frame (130,130,140) and two grey spoked wheels about 1 stud across.
+  - Each is pulled by a small brown-orange creature (170,90,40).
+  - A loaded cart carries a red apple and can show a yellow amount label ("1.45k").
+  - Carts sit on ledges and on the ground by the nest.
+- **Creatures:**
+  - Blocky, about 2 studs: cube head with white square eyes, bent antennae, thin legs.
+  - Black for Common; pale blue with darker blue legs for the ice type.
+  - They walk between the nest and the middle of the map.
+- **Plot marker:**
+  - Floats high above each plot.
+  - Circular avatar portrait with a green ring.
+  - "<Player>'s Home" in white.
+  - Apple icon plus rate ("45/s", "43.74K/s") in green with a dark outline.
+
+## Rebuild recipe for the bee game
+
+- **Shared style:** keep the studded-brick look, white text with dark outline, the green price pill, and the rarity colours in the table. Use FredokaOne throughout.
+- **Queen Bee roll area:**
+  - Stage 1 is a gold-and-black striped Queen Bee with a gold crown and translucent wings, on a tan pedestal with a gold ring, gold knobs and purple gems.
+  - Later stage is a crystal Queen: dark body, glowing eyes, amber honey-crystal or ice-blue shards, on a pale pedestal with crystal spikes.
+  - Tie the skin swap to Queen's Luck level.
+- **Sign:** a leaning orange studded plate, 6 by 2.2 studs, with white brick letters reading "RollBee" (or "Queen's Roll") and a green top strip.
+- **Offer stalls:**
+  - Same box: white brick sides, orange band, green cap; a honeycomb-yellow band would also suit.
+  - Red frame with yellow neon bulbs, chased by script, round a navy SurfaceGui.
+  - Screen lines: bee name, rarity word, green price pill, and a rotated cyan "New!!" for undiscovered bees.
+  - The offered bee stands on top with rarity-coloured sparkles (ParticleEmitter) and an optional light beam.
+  - The screen is blank between rolls. Start with one stall; add more if a rolls upgrade is ever added.
+- **Buying:** ProximityPrompt "Buy Bee" with the price as object text. Weld the bee above the head with an arms-up pose, plus a BillboardGui showing name, rarity and "HONEY: x" (the bee's stat).
+- **Upgrade Shop boards:**
+  - Same wooden frame, lamp and stacked gradient panels; four panels across the two boards.
+  - **Beehive:** pink to violet, hive-pyramid icon, "Slot +1".
+  - **Backpack:** cyan to blue, honey jar with up-arrow, "10 > 15".
+  - **Bee Speed:** peach to red, bee with speed streaks, "+0 > +0.2".
+  - **Queen's Luck:** yellow to pink to purple, clover or crown icon, "1x > 2x".
+  - Pill is green when affordable and lavender-grey when not.
+- **Honey Market:**
+  - Tan floor with a yellow border.
+  - Stall of dirt and grass blocks, wooden shelves, crates stamped with a honey-jar icon, jars, honeycomb chunks and flowers in place of produce.
+  - Big sign shaped like a stepped honey jar or hexagon, with an amber or red border and cream interior, showing carried jars in yellow outlined digits.
+  - Header: "Honey Market", "Price Multiplier : 1.82X", the red-to-green bar with yellow triangle marker, and "Refresh: 10 s" with a red number.
+  - The side board can be a free info board (for example best price today) rather than a paid one, since this is a kids' game.
+- **Beehive (nest):**
+  - Same stepped pyramid, 4.5 studs per slot and 4 studs per tier; honey-gold or straw blocks with grass or honeycomb caps would suit.
+  - Stepped arches coloured by rarity, with bee name on top and stat at the bottom.
+  - Gold hexagonal padlock for locked slots; green "Empty" for free slots.
+  - A "royal jelly" blob with a capsule timer above slots for any timed state.
+  - A honey-jar pop-up with a yellow number on each delivery.
+  - Small carts or jar racks on the ledges, optional since bees fly.
+  - Plot marker above: owner portrait, "<Player>'s Hive", and a jar icon with the per-second rate in green.

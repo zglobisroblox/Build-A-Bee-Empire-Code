@@ -1,0 +1,10 @@
+# The saved place files are big and are only used to pull the code out (see README.md)
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+# Blender's working output
+toolkit/blender/out/
+# Windows and OneDrive clutter
+Thumbs.db
+desktop.ini

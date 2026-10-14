@@ -1,0 +1,65 @@
+# Roblox picture ids for the UI icons (uploaded 2026-10-08 to the game owner's account)
+Coin         rbxassetid://71919404605768
+Jar          rbxassetid://111621484167740
+Lock         rbxassetid://99478022938540
+Arrow        rbxassetid://129201309149372
+Clover       rbxassetid://84423713163653
+BeeCommon    rbxassetid://93579576246248
+BeeUncommon  rbxassetid://79064297023693
+BeeRare      rbxassetid://133041027301739
+SpeedBee     rbxassetid://136672979782644
+Hive1        rbxassetid://79831835427700
+Hive2        rbxassetid://96746304577411
+Hive3        rbxassetid://85863130397460
+Hive4        rbxassetid://93280780775365
+Hive5        rbxassetid://135896143694079
+
+# New bee pictures drawn in Blender (uploaded 2026-10-08); these replace the three older bee pictures
+BeeCommon    rbxassetid://126038686024200   (Worker Bee)
+BeeUncommon  rbxassetid://135472858758591   (Scout Bee)
+BeeRare      rbxassetid://108059206554074   (Guard Bee)
+BeeEpic      rbxassetid://109181638264962   (Royal Bee)
+BeeLegendary rbxassetid://104310151658817   (Emperor Bee)
+Egg	102245578720751	(More Rolls upgrade: the mystery egg, 2026-10-08)
+
+# New hive pictures drawn in Blender (uploaded 2026-10-09); these replace the five older hive pictures
+Hive1	105003096405383	(Tiny Hive)
+Hive2	100976451719340	(Cozy Hive)
+Hive3	130073548758972	(Busy Hive)
+Hive4	96258659832508	(Grand Hive)
+Hive5	104657482146946	(Royal Hive)
+
+# Settings window pictures drawn in Blender (uploaded 2026-10-09)
+Gear	94885282692628	(the Settings button and window)
+Music	77775659018235	(music volume)
+Speaker	112444982237747	(sound effects volume)
+
+# The second bee of every rarity, drawn in Blender (uploaded 2026-10-10)
+BeeBuilder	113007330771684	(Builder Bee, Common)
+BeeExplorer	127505070904764	(Explorer Bee, Uncommon)
+BeeKnight	78704267318403	(Knight Bee, Rare)
+BeeWizard	86035814347272	(Wizard Bee, Epic)
+BeeGalaxy	75490821625417	(Galaxy Bee, Legendary)
+FastEgg = rbxassetid://132741246019666   (the Roll Speed upgrade; made 2026-10-11 with blender\rollarea.py mode fasticon)
+Calendar = rbxassetid://137134006746434   (the Daily Rewards button and window; made 2026-10-12 with blender\rewards.py mode calendar)
+Backpack = rbxassetid://111101608052900   (the Inventory button and window; made 2026-10-12 with blender\rewards.py mode backpack)
+Shop = rbxassetid://102044391951696   (the Shop button and window: a market stall; made 2026-10-12 with blender\shop.py mode shop)
+PassStarter = rbxassetid://99567876065521   (the Starter Pack pass: a gift box; blender\shop.py mode starter)
+PassRolls = rbxassetid://75432882681891   (the +2 Rolls pass: two mystery eggs and "+2"; blender\shop.py mode rolls)
+PassLucky = rbxassetid://116760076108779   (the Lucky Queen pass: a clover with a crown and "x2"; blender\shop.py mode lucky)
+PassAutoSell = rbxassetid://91191396465175   (the Auto Sell pass: a jar, a coin and "AUTO"; blender\shop.py mode autosell)
+PassInventory = rbxassetid://117013237087628   (the Infinite Inventory pass: the backpack with an infinity sign; blender\shop.py mode inventory)
+PassVIP = rbxassetid://101645654911390   (the VIP pass: a crown over "VIP"; blender\shop.py mode vip)
+BeeBat = rbxassetid://91799548554906   (Bat Bee, Limited: Halloween 2026; blender\bees.py mode hwicons, outfit in blender\halloween_gear.py)
+BeeGhost = rbxassetid://112993378947212   (Ghost Bee, Limited: Halloween 2026)
+BeePumpkinKing = rbxassetid://133625872862574   (Pumpkin King Bee, Limited and secret: Halloween 2026)
+HalloweenEgg = rbxassetid://80447254874364   (the Halloween Egg; blender\halloween.py mode icon)
+LoadingLeft = rbxassetid://108627391722875   (NOT USED: a first, less wide loading picture, left half; uploaded 2026-10-13)
+LoadingRight = rbxassetid://97857084356127   (NOT USED: the first loading picture's right half)
+LoadingStrip1 = rbxassetid://123164186142235   (the loading screen's picture, 2400 x 1080, in three strips 816 wide that overlap by 24: this one starts at 0; made 2026-10-13 with blender\thumbnails.py mode loading)
+LoadingStrip2 = rbxassetid://135286502631323   (starts 792 from the left)
+LoadingStrip3 = rbxassetid://134975888801582   (starts 1584 from the left)
+WalkSpeed = rbxassetid://89333949046329   (the Walk Speed upgrade: a bee-striped sneaker with a wing and speed lines; made 2026-10-14 with blender\walkspeed.py)
+FxRays = rbxassetid://121656174186329   (white sunburst, 12 rays, tinted in the game: the reveal screens; made 2026-10-14 with icon-tools\make-fx.ps1)
+FxGlow = rbxassetid://78079692624152   (a soft white round glow)
+FxSparkle = rbxassetid://123529723591210   (a four-pointed white twinkle star)

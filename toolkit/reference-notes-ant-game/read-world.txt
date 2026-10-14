@@ -1,0 +1,141 @@
+# World art spec: "brick-built garden" look (from 17 screenshots)
+
+Sizes are in Roblox studs; a character is about 5 studs tall and 2 wide at the torso. Sizes of large or distant things are estimates. One prop is a real-world branded drinks cup and is deliberately left out.
+
+## 1. Building-brick look
+
+- **Stud pattern on everything.** Ground, paths, cliffs, tree trunk, fruit, stalls and signs all show a grid of raised square bumps with slightly rounded corners (not the classic round stud).
+- **Stud size.** Pitch is about 1 stud, so a character is about 5 bumps tall and its torso covers 2. Each bump is about half the pitch (0.5 stud).
+- **Stud shading.** The bump is the same colour as the surface. It is drawn only by a thin lighter line on its top/left edges and a line about 12–15% darker on its bottom/right. On the ground it looks like a texture, not geometry (guess).
+- **Side faces.** Vertical faces show thin horizontal brick seams about 0.4–0.5 stud apart (seen on the giant fruit and trunk). Cliffs carry the same stud grid on their vertical faces, which reads as fine dots at distance.
+- **Hero props use chunkier nubs.** Stall pillars and beams have real-looking square nubs about 0.8 stud across, sticking out about 0.2 stud, on a 1.5–2 stud pitch.
+- **Colour.** One flat, saturated colour per part: no gradients, noise or gloss. Shading comes only from the sun, with side faces about 15–25% darker than tops.
+- **Voxel shapes.** Nothing is round. Curves are stair-stepped in 1-block increments (fruit corners, arches, tree branches at 45°, cliff edges). Thin things are square sticks.
+
+## 2. Ground
+
+All ground is thin stud-topped plates in a patchwork. Every colour boundary is a stepped "pixel" edge with rectangular fingers 2–6 studs long, never a diagonal or curve.
+
+| Surface | RGB (lit) | Notes |
+|---|---|---|
+| Main path | 235,135,60 (shadow 190,100,45) | Orange, 20+ studs wide. Sits one plate (0.3–0.5 stud) above the grass with a visible darker edge. |
+| Grass, main | 70,200,60 | Very vivid; nearest plates read 80,220,50. |
+| Grass, dark patches | 70,160,65 | Large rectangles, 10–30 studs. |
+| Grass, light patches | 170,225,110 | Lime rectangles and L-shapes, used as soft paths inside lawns. |
+| Central plaza | 205,235,140 | Pale yellow-green, under the tree. |
+| Market plaza | 250,215,75 (stud edge 235,190,50) | Bright yellow, around the stalls. |
+| Stall floor | 235,170,55 | Gold-orange plate under each stall. |
+| Dirt | 125,80,55 and 95,60,45 | Patches in lawns; two-tone stepped border 2 studs wide around stall floors. |
+| Stone slabs | 150,150,185 | Lilac-grey flat irregular slabs, 4–10 studs, scattered on lawns; also a threshold strip at a home's front. |
+| Cream slabs | 235,215,175 | Stepping stones, 2 layers, stepped outline. |
+
+- **Kerbs.** A bright green strip (80,220,50), 1 stud wide and 0.5–1 stud tall, outlines plazas and home plots.
+- **Home plot.** It is a raised green platform about 1 stud high with a darker green front face.
+
+## 3. Scenery
+
+- **Central tree.**
+  - Square trunk, 6–7 studs wide, red-brown (120,70,55), about 25–30 studs to the first branch. Branches leave at 45° in steps.
+  - Canopy is a few huge cubes (10–16 studs each) in two greens (45,120,55 and 80,155,70). Total height is about 50–60 studs (guess).
+  - Red block fruit, about 4 studs, hangs under the canopy.
+  - It stands on the pale plaza inside a ring of fence.
+- **Giant fruit on the ground.**
+  - Red (225,35,35) block-built fruit, 5–8 studs across (1 to 1.6 character heights), with stepped corners.
+  - Brown stem 1×1×2–3, with a dark green leaf block beside it.
+  - Three states are visible: whole; bitten (one side replaced by a cream 235,215,170 stepped face); and core (red top and bottom caps joined by a cream stepped hourglass).
+  - One had a small red fruit icon with a yellow, dark-outlined number ("3.36K") floating above it. Whether that is the fruit's value or a carrier behind it is a guess.
+- **Fences.** Dark brown posts (90,60,45), 1×1×3 studs, with two lighter rails (135,95,65) about 0.5 stud thick; posts every 6–8 studs. They ring the tree plaza and line the paths.
+- **Flowers.** 3–4 slanted dark green box leaves with 1–2 pink-red cube blossoms (230,90,110) on top, 3–4 studs tall. Occasional small white or yellow blossoms on the lawns.
+- **Grass tufts.** Clusters of 2–5 thin dark green sticks (40,130,60), 0.2–0.3 stud thick and 1–2 tall, scattered sparsely, mostly on the pale plaza.
+- **Lamps.** Small box lanterns, about 1×1×1.5, with an orange-red frame and a glowing yellow-orange core (255,165,40). They hang from brown brackets on stalls and signposts.
+- **String lights.** Drooping thin white cables between tall posts, with warm yellow glowing bulbs (255,230,90) every 1.5 studs or so. One line of small multi-colour triangular bunting.
+- **Stalls.**
+  - *Red-awning booth* (about 16 wide × 14 tall, guess): dark brown posts, orange-brown brick walls (195,100,50), red/white striped awning (225,40,40 / 245,245,245, stripes about 1.5 studs), cream stepped roof. The sign board is built into the roof: "Pet" in yellow and "Exchange" in white, chunky with dark brown outline, under a round white badge with a pink paw. Counter, red mat with gold trim on a lilac-grey slab, a flower box with white daisies.
+  - *Open pavilion* (about 24 wide, pillars 7–8 tall, guess): sand-coloured studded pillars and beam (225,175,120) on lilac-grey bases. Flat roof striped yellow / pale yellow (250,215,60 / 250,235,150). A row of yellow square blocks hangs under the front beam. Props: crates, red-brown chests with gold cubes, bottles, shelves.
+  - *Sell stand*: gold-orange floor, red-brown brick counter with red fruit emblems, crates, a blue ramp. A big tilted fruit-shaped sign (red border, white or yellow face, green leaf) shows a gold number ("8.54K", later "15.88K").
+- **Signposts.**
+  - Tilted orange-brown plank on a post, white text ("Group Reward").
+  - Hanging dark board over a two-post gate ("Mount Training", white text).
+  - Red-brown hanging board with a lantern on top (rows too small to read).
+- **Leaderboards.** Two tall boards on posts behind the sell stand, about 8×14 studs (guess), slightly tilted. Orange frame (240,150,50); headers "EFF Rank" and "Online Rank" in white with dark outline; banded rows too small to read.
+- **Other props.**
+  - Giant blue mushroom (50,70,225) with glowing yellow square spots, about 20–25 studs tall (guess).
+  - A round prize wheel on a dark wood frame with vines and white daisies.
+  - A blue visiting truck.
+  - A machine wrapped in black chain loops orbiting in crossing ellipses. This is the only locked state visible.
+- **Cliffs.**
+  - A ring of terraced walls surrounds the map, each tier roughly 20–40 studs tall (guess).
+  - Walls are lilac-grey (150,140,185) with big blocky patches of a darker shade (115,105,160). Some tiers are mauve-brown (125,85,105).
+  - Each tier has a green cap (55,165,90) 2–4 studs thick that drips down the face in pixel steps.
+  - On top stand tall thin trees with flat stepped canopies and hanging vines, hazed to teal-blue.
+- **Sky and light.**
+  - Sky is azure (70,170,245) to pale at the horizon (150,200,250), with faceted white-blue mountains and clouds (225,235,250).
+  - Bright midday sun, soft shadows, no dark areas. Blue distance haze (about 80,120,200) makes far things teal.
+  - Lamps and bulbs have a mild glow.
+- **Beams.**
+  - Each player home has a tall translucent vertical beam, 6–8 studs wide and widening upward, at about 0.3–0.5 opacity. Colour differs per home (pale yellow-green 235,240,120; cyan-white 150,230,255 with sparkles).
+  - Thick pink-white diagonal streaks (255,130,180, white core) cross the sky. They probably belong to a timed event (guess).
+
+## 4. Living things
+
+- **Ants.**
+  - Three boxes (head cube, thorax, larger abdomen) in charcoal (40,38,50) or red (220,55,40).
+  - Six thin two-segment box legs with an elbow, and two bent stick antennae.
+  - 3–5 studs long and 1.5–2 tall (knee to waist high).
+- **Movement.** I only saw one to three ants at a time, on the orange path between a nest and the fruit, and in front of nest doors. A tidy line was not visible. A tiny yellow number sat by one ant (it looked like "770"; too small to be sure).
+- **Nest.**
+  - Stepped pyramid of red-brown dirt (150,85,55). The clearest one has three tiers with 3, 2 and 1 doorways.
+  - Each tier is about 7–8 studs tall and set back about 3 studs per side. The bottom tier is about 30 wide (guess).
+  - Each tier is capped by a 1-block bright green strip with spiky tufts at the ends.
+  - Doorways are pixel arches about 4 wide × 5 tall, with a dark interior (40,25,25) and a 1-block frame.
+  - Frame colour varies (orange-tan, white, green; pink-red and blue-purple on other players' nests). It probably marks rarity or a skin (guess).
+  - Other players' nests reach six or more tiers. An empty slot could not be told apart from a filled one.
+- **Carts.** Small yellow wagons with grey-blue wheels pulled by a brown block horse, parked beside the nest. Their purpose is unclear.
+- **Mounts.**
+  - Blue block beetle (60,120,230) with a light-blue glowing back panel (130,200,255) and V antennae, about 3 long × 2 tall.
+  - Charcoal tractor with treaded wheels about 3 studs across, following its player.
+  - Orange-brown horse with a green saddle beside a cowboy character.
+
+## 5. Floating labels and avatar bubbles
+
+- **Place labels.** These shrink with distance: tiny from far away, about 6% of screen height in cap height when standing next to them. Heavy rounded font.
+  - "Items Shop": yellow (255,225,50) to orange (255,170,20) top-to-bottom gradient, near-black outline about 8% of cap height, slight drop shadow.
+  - "Sell Food": gold (255,190,40), dark brown outline.
+  - "Skins" and "Resource Converter": smaller, orange (245,165,35).
+  - "RollAnt": white with a thick orange outline (235,130,40), on the pad's front.
+- **Sell stand read-out** (stacked under "Sell Food"):
+  - "Price Multiplier : 1.82X": white with dark outline, value in yellow.
+  - A bar about 28% of screen width and 1.5% of screen height (when close) on a black track. The fill gradient runs red → orange → yellow → green, with a small yellow triangle above the fill end.
+  - "Refresh: 16 s": white, with the number in red.
+  - Changes between frames: 1.82X → 1.48X, the fill shrinks from about 88% to about 68%, and the seconds count down.
+- **Event label.** Lime-green "Food Buyer's Visit" with yellow "Price: 2.5x !" over the visiting truck.
+- **Avatar bubbles.** These stay roughly the same screen size at any distance and show through scenery.
+  - A circle about 7–9% of screen height with the owner's headshot, a flat background (dark teal 30,70,70 or pale blue 170,200,240) and a ring about 3 px thick.
+  - Above: "<name>'s Home", small, white or pale pink with dark outline.
+  - Below: a small red fruit icon and a green (80,230,60) rate such as "45/s" or "43.74K/s".
+  - The bubble sits at the top of that home's beam.
+
+## Rebuild recipe for the bee game
+
+- **Studs.** Make one original square-stud tile and apply it as a tiling Texture (1 stud per tile, mostly transparent) over flat-coloured SmoothPlastic parts. Use real nub parts only on the hive and stalls.
+- **Ground.** Keep the greens, orange path and yellow plaza unchanged; they already read as honey colours. Generate the stepped-edge plates from a small grid in a script. Add the green kerbs and brown stall borders.
+- **Flower Garden (replaces tree and fruit).** One giant block flower or blossom tree in the middle on the pale lime plaza, inside the same fence. Giant flower heads 5–8 studs across (pink, white, purple, yellow centres) replace the fruit. States: full petals → half → bare centre.
+- **Beehive (replaces Ants Nest).** Same stepped tiers in honey gold (245,185,50) and amber (220,140,30) with dark brown caps (90,55,30). One stepped-arch cell per working bee; the frame colour shows rarity.
+- **Bees (replace ants).** Yellow and black striped boxes, two pale translucent wing plates, stick antennae, 2–3 studs long. They hover and bob, carrying a small honey jar with a yellow number above.
+- **Honey Market (replaces Sell Food).** Yellow/white striped awning, amber counter, and a jar-shaped sign showing the amount. Keep the gold label, multiplier bar and refresh timer.
+- **Queen Bee pad (replaces RollAnt).** Tan pad with a white label and orange outline reading "Queen Bee".
+- **Upgrade Shop.** The sand-coloured studded pavilion with the yellow striped roof, lanterns and a row of hanging yellow blocks.
+- **Scenery.** Keep the fences, tufts, block flowers, lanterns, string lights and the lilac cliffs with green caps. Purple-grey sets off the yellow well.
+- **Hive bubbles.** A BillboardGui that shows through scenery with a round headshot (the one place an image is needed: the player's own thumbnail), "<Name>'s Hive" above and a jar icon with a green "/s" rate below. Add a honey-yellow beam for your own hive and pale blue for others.
+- **Locked things.** Wrap them in dark block-chain loops.
+- **Not copied.** The branded cup, the truck, and the other game's names and signs.
+
+## Biggest change for least work
+
+1. Stud texture plus flat saturated colours on the existing ground and buildings.
+2. Scripted ground patchwork: three greens, orange path and yellow plaza with stepped edges and kerbs.
+3. Lighting: bright sun, soft shadows, blue haze, slightly raised saturation, glow on lamps.
+4. Gold outlined floating labels over the Honey Market, Upgrade Shop, Queen Bee pad and Flower Garden.
+5. A script that scatters grass tufts and block flowers, plus a fence ring round the garden.
+6. A backdrop ring of lilac cliff boxes with green caps.
+7. The tiered hive with coloured arch cells, and hive bubbles with beams.
